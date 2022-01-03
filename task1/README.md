@@ -32,11 +32,11 @@ original_token
 
 
 # Task 4. Frequencies of words.
-        Using the lower case string obtained from the file, get the frequencies of the word. What are the 10 most frequent tokens? 
+        Using the lower case string obtained from the file, get the frequencies of the word. What are the 10 most frequent tokens?
         Extract the list of the hapaxes.
         Plot the frequency of the words in the descending order as a scatter plot, How similar it is to the zipf law? Why?
 # Task 5. Part of speech tagging.
         Extract from the text the part of speech of every token, and group them in dictionary with the following form:
-        
+
         {“POS” : [list of tokens with this POS] }
         What is the most common part of speech and why? What is the part of speech that has the smallest frequency?
