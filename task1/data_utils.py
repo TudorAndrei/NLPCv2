@@ -54,7 +54,7 @@ class TwitterDataset(Dataset):
             for _ in range(self.max_len - len(tokens)):
                 tokens.append(self.word2idx[self.pad_tok])
         else:
-            tokens = tokens[:self.max_len]
+            tokens = tokens[: self.max_len]
 
         tokens = np.array(tokens)
 
