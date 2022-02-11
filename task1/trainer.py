@@ -14,10 +14,10 @@ EMB_DIM = 64
 HID_DIM = 128
 NW = 8
 
-# path_train = r"../twitter_dataset/train.csv"
-# path_val = r"../twitter_dataset/train.csv"
-path_train = r"../twitter_dataset/twitter_training.csv"
-path_val = r"../twitter_dataset/twitter_validation.csv"
+path_train = r"../twitter_dataset/train.csv"
+path_val = r"../twitter_dataset/train.csv"
+# path_train = r"../twitter_dataset/twitter_training.csv"
+# path_val = r"../twitter_dataset/twitter_validation.csv"
 vocab = Vocab(path=path_train)
 print("Created Vocab")
 
@@ -54,6 +54,9 @@ for epoch in range(EPOCHS):
         label_OH = label_OH.cuda()
 
         output = model(tokens)
+        print(output.shape)
+        print(label_OH.shape)
+        break
         loss = criterion(output, label_OH)
         epoch_loss += loss.item()
         for i in range(output.shape[0]):
@@ -62,6 +65,7 @@ for epoch in range(EPOCHS):
             )
         loss.backward()
         optim.step()
+    break
     print(
         f"Epoch: {epoch+1}\nTrain: Loss: {epoch_loss/len(train_loader):.2f} Acc: {np.mean(np.array(acc)):.3f}"
     )
