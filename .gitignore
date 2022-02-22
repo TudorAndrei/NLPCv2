@@ -130,3 +130,5 @@ dmypy.json
 twitter_dataset/
 .vector_cache
 chatbot_intent/
+cornell_movie/
+task3/data/
